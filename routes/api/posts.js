@@ -139,7 +139,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
         }
 
         //Get index to be removed
-        const removeIndex = post.likes.map(like => like.user.toString()).indexOf(req.params.id);
+        const removeIndex = post.likes.map(like => like.user.toString()).indexOf(req.user.id);
         post.likes.splice(removeIndex, 1);
         await post.save();
         res.json(post.likes);
@@ -251,7 +251,5 @@ router.put('/comment/:id/:comment_id', [auth,[
         res.status(500).send(`Server Error`);
     }
 });
-
-
 
 module.exports = router;
