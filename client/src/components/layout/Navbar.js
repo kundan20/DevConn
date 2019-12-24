@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
      const authLinks = (
         <ul>
             <li>
-                <Link to ="/#!">
+                <Link to ="/dev-profiles">
                     <i class="fas fa-laptop-code"></i>{' '}Developers</Link>
             </li>
             <li>
@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
      const guestLinks = (
         <ul>
             <li>
-                <Link to ="#!">
+                <Link to ="/dev-profiles">
                     <i class="fas fa-laptop-code"></i>{' '}Developers
                 </Link>
             </li>

@@ -5,10 +5,16 @@ const config = require('config');
 const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 
 const {check, validationResult } = require('express-validator');
 
-
+const checkURL = url => {
+    if(!/^(f|ht)tps?:\/\//i.test(url)) {
+        url = 'https://' + url;
+    }
+    return url;
+}
 //@route  GET api/profile/me
 //@desc   Get current user profile
 //@access Private
@@ -63,7 +69,7 @@ async (req, res) => {
     profileFields.user = req.user.id;
 
     if(company) profileFields.company = company;
-    if(website) profileFields.website = website;
+    if(website) profileFields.website = checkURL(website);
     if(location) profileFields.location = location;
     if(bio) profileFields.bio = bio;
     if(status) profileFields.status = status;
@@ -75,11 +81,11 @@ async (req, res) => {
     
     //Build social object
     profileFields.social = {};
-    if(youtube) profileFields.social.youtube = youtube;
-    if(instagram) profileFields.social.instagram = instagram;
-    if(linkedin) profileFields.social.linkedin = linkedin;
-    if(facebook) profileFields.social.facebook = facebook;
-    if(twitter) profileFields.social.twitter = twitter;
+    if(youtube) profileFields.social.youtube = checkURL(youtube);
+    if(instagram) profileFields.social.instagram = checkURL(instagram);
+    if(linkedin) profileFields.social.linkedin = checkURL(linkedin);
+    if(facebook) profileFields.social.facebook = checkURL(facebook);
+    if(twitter) profileFields.social.twitter = checkURL(twitter);
 
     try {
 
@@ -146,7 +152,8 @@ router.get('/user/:user_id', async (req, res) => {
 
 router.delete('/', auth, async (req, res) => {
     try {
-        //@todo - remove user posts
+        //Remove user posts
+        await Post.deleteMany({ user: req.user.id });
 
         //Remove profile
         await Profile.findOneAndRemove({ user: req.user.id });

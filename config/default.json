@@ -1,6 +1,6 @@
 {
     "mongoURI": "mongodb+srv://kundan:1234567@@devconn-yqbma.mongodb.net/test?retryWrites=true&w=majority",
-    //"mongoURI": "mongodb://localhost:27017",
+    //"mongoURI": "mongodb://localhost:27017/mydb",
     "jwtSecret": "mysecrettoken",
     "githubClientId": "8fae0edb6a67dd38cb23",
     "githubSecretKey": "38b4a96a004e08346922500d650989cd36d8a785"

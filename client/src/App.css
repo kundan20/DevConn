@@ -1,4 +1,5 @@
 /* Global Styles */
+
 :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
@@ -82,7 +83,7 @@ img {
   padding: 1rem;
 }
 .p-2 {
-  padding: 2rem;
+  padding: 1rem;
 }
 .p-3 {
   padding: 3rem;
@@ -118,6 +119,7 @@ img {
 }
 .my-1 {
   margin: 1rem 0;
+  /* height: 21vh; */
 }
 .my-2 {
   margin: 2rem 0;
@@ -355,12 +357,13 @@ button {
 /* Profiles Page */
 .profile {
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
   grid-gap: 2rem;
   padding: 1rem;
   line-height: 1.8;
   margin-bottom: 1rem;
+  border-radius: 1rem;
 }
 
 /* Profile Page */
@@ -371,7 +374,7 @@ button {
     'about about'
     'exp edu'
     'github github';
-  grid-gap: 1rem;
+  grid-gap: 0.6rem;
 }
 
 .profile-top {
@@ -381,10 +384,13 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 1rem;
+  height: 68vh;
+  background-color:  #0077b5;
 }
 
 .profile-top img {
-  width: 250px;
+  width: 200px;
 }
 
 .profile-top .icons a {
@@ -399,6 +405,8 @@ button {
 .profile-about {
   grid-area: about;
   text-align: center;
+  border-radius: 1rem;
+  /* height: 40vh; */
 }
 
 .profile-about .skills {
@@ -410,15 +418,19 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  border-radius: 1rem;
+  border: #ccc solid 1px;
 }
 
 .profile-edu {
   grid-area: edu;
+  border: #ccc solid 1px;
+  border-radius: 1rem;
 }
 
 .profile-exp h2,
 .profile-edu h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .profile-exp > div,
@@ -435,7 +447,7 @@ button {
 
 .profile-exp p,
 .profile-edu p {
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
 }
 
 .profile-github {
