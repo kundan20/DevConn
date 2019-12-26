@@ -42,7 +42,7 @@ img {
   overflow: hidden;
   padding: 0 2rem;
   margin-top: 6rem;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 /* Text Styles*/
@@ -456,6 +456,8 @@ button {
 
 .profile-github .repo {
   display: flex;
+  border: #ccc solid 1px;
+
 }
 
 .profile-github .repo > div:first-child {
