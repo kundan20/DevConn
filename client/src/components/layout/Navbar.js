@@ -5,15 +5,16 @@ import { logout } from '../../actions/auth';
 import PropTypes from 'prop-types';
 
  const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
+   //  const authDict = [{'Developer'}]
      const authLinks = (
         <ul>
             <li>
                 <Link to ="/dev-profiles">
-                    <i class="fas fa-laptop-code"></i>{' '}Developers</Link>
+                    <i className="fas fa-laptop-code"></i>{' '}Developers</Link>
             </li>
             <li>
                 <Link to ="/dashboard">
-                    <i class="fas fa-user"></i>{' '}
+                    <i className="fas fa-user"></i>{' '}
                     <span className = "hide-sm">Dashboard</span>
                 </Link>
             </li>
@@ -30,12 +31,12 @@ import PropTypes from 'prop-types';
         <ul>
             <li>
                 <Link to ="/dev-profiles">
-                    <i class="fas fa-laptop-code"></i>{' '}Developers
+                    <i className="fas fa-laptop-code"></i>{' '}Developers
                 </Link>
             </li>
             <li>
                 <Link to ="/register">
-                    <i class="fas fa-user-plus">
+                    <i className="fas fa-user-plus">
                     </i>{' '}
                     <span className = "hide-sm">Sign Up
                     </span>
@@ -43,7 +44,7 @@ import PropTypes from 'prop-types';
             </li>
             <li>
                 <Link to ="/login">
-                    <i class="fas fa-sign-in-alt">
+                    <i className="fas fa-sign-in-alt">
                     </i>{' '}
                     <span className = "hide-sm">Login
                     </span>
@@ -51,18 +52,6 @@ import PropTypes from 'prop-types';
             </li>
         </ul>
      );
-    //  const authTitle = (        
-    //     <Link to="#!">
-    //         <i className ="fas fa-terminal">
-    //         </i>DevConn
-    //     </Link>            
-    //  );
-    //  const guestTitle = (
-    //     <Link to="/">
-    //         <i className ="fas fa-terminal">
-    //         </i>DevConn
-    //     </Link>          
-    //  );
 
     return (
         <nav className ="navbar bg-dark">

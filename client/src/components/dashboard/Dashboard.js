@@ -6,6 +6,7 @@ import { getCurrentUserProfile, deleteAccount } from '../../actions/profile';
 import Experience from './Experience';
 import DashboardAction from './DashboardAction';
 import Education from './Education';
+import ProfileGithub from '../profile/ProfileGithub';
 
 const Dashboard = ({ getCurrentUserProfile, deleteAccount, profile: { profile, loading }, auth: { user } }) => {
    useEffect(() =>{
@@ -31,7 +32,11 @@ const Dashboard = ({ getCurrentUserProfile, deleteAccount, profile: { profile, l
 
             {profile.education.length !=0 && <Fragment>
             <Education education = {profile.education} />
-            </Fragment>}                
+            </Fragment>} 
+
+            {profile.githubusername && (
+                <ProfileGithub username = {profile.githubusername} />
+            )}               
             
             <div className="my-2">
                 <button className="btn btn-danger" onClick={() => deleteAccount()}>

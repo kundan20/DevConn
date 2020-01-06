@@ -10,7 +10,7 @@ import Navbar from '../src/components/layout/Navbar';
 import Landing from '../src/components/layout/Landing';
 import Register from '../src/components/auth/Register';
 import Login from '../src/components/auth/Login';
-import Alert from '../src/components/layout/Alert';
+import Alert from '../src/components/alert/Alert';
 import Dashboard from './components/dashboard/Dashboard';
 
 import { loadUser } from './actions/auth';
@@ -37,7 +37,7 @@ const App = () => {
     <Router>
       <Fragment>
         <Navbar />
-        <Route exact path="/" component = {Landing} />
+        <Route exact path="/" component = {Landing} />        
         <section className = "container">
         <Alert />
           <Switch>            
