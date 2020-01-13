@@ -220,7 +220,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 //@access Private
 
 router.put('/comment/:id/:comment_id', [auth,[
-    check('text', 'Text is required.').not().isEmpty()
+    check('_text', 'Text is required.').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
@@ -242,7 +242,7 @@ router.put('/comment/:id/:comment_id', [auth,[
         }
 
         //update comment     
-        comment.text = req.body.text;  
+        comment.text = req.body._text;  
         await post.save();
         return res.json(post.comments);
 

@@ -10,7 +10,11 @@ import PropTypes from 'prop-types';
         <ul>
             <li>
                 <Link to ="/dev-profiles">
-                    <i className="fas fa-laptop-code"></i>{' '}Developers</Link>
+                    <i className="fas fa-laptop-code"></i>{' '}<span className = "hide-sm">Developers</span></Link>
+            </li>
+            <li>
+                <Link to ="/posts">
+                    <i className="fas fa-comment"></i>{' '}<span className = "hide-sm">Community</span></Link>
             </li>
             <li>
                 <Link to ="/dashboard">

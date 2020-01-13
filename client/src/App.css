@@ -483,6 +483,7 @@ button {
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
   align-items: center;
+  border: #ccc solid 1px;
 }
 
 .post > div:first-child {
