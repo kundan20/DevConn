@@ -56,7 +56,7 @@ const CommnentItem = ({
                         name="_text"
                         cols="30"
                         rows="5"
-                        placeholder="Modify your comments..."
+                        placeholder="Modify your comments."
                         value={_text}
                         onChange={e => _setText(e.target.value)}
                         required            
